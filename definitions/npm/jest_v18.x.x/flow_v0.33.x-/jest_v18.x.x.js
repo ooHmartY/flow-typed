@@ -67,7 +67,9 @@ type JestCallsType = {
   any(): boolean,
   count(): number,
   first(): mixed,
-  mostRecent(): mixed,
+  mostRecent<T>(): { object: T, args: Array<mixed>, returnValue: mixed },
+  mostRecent<T, A>(): { object: T, args: A, returnValue: mixed },
+  mostRecent<T, A, R>(): { object: T, args: A, returnValue: R },
   reset(): void,
 }
 

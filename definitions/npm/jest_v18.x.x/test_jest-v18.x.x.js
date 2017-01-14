@@ -97,3 +97,10 @@ expect.stringMatching('*this part*');
 test.concurrent('test', () => {});
 
 expect([1, 2, 3]).toHaveLength(3);
+
+const mock = jasmine.createSpy('mock');
+const args = mock.calls.mostRecent().args;
+
+type Context = { bar: string };
+const context: Context = mock.calls.mostRecent().object;
+const bar = context.bar;
